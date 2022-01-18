@@ -1,4 +1,3 @@
-# face-recognition
 
 ![face](images/face_recognition.gif)
 
