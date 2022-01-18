@@ -1,4 +1,3 @@
-# Code Anis - Defend Intelligence
 import cv2
 import dlib
 from PIL import Image
@@ -58,7 +57,8 @@ def easy_face_reco(frame, known_face_encodings, known_face_names):
     for face_encoding in face_encodings_list:
         if len(face_encoding) == 0:
             return np.empty((0))
-        # CHECK DISTANCE BETWEEN KNOWN FACES AND FACES DETECTED
+        # Checking the norm of vectors.
+        # The smaller the norm, the more the faces are alike.
         vectors = np.linalg.norm(known_face_encodings - face_encoding, axis=1)
         tolerance = 0.6
         result = []
